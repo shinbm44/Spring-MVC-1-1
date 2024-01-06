@@ -47,7 +47,6 @@ public class FrontControllerServletV4 extends HttpServlet {
 
         // 물리이름으로 객체 만들기
         MyView myView = viewResolver(viewName);
-
         myView.render(model, request, response);
     }
 
