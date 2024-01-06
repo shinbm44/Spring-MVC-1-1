@@ -9,12 +9,12 @@ import java.util.Map;
 
 public class MemberSaveControllerV3 implements ControllerV3 {
 
-    MemberRepository memberRepository = MemberRepository.getInstance();
+    private MemberRepository memberRepository = MemberRepository.getInstance();
 
     @Override
-    public ModelView process(Map<String, String> paraMap) {
-        String username = paraMap.get("username");
-        int age = Integer.parseInt(paraMap.get("age"));
+    public ModelView process(Map<String, String> paramMap) {
+        String username = paramMap.get("username");
+        int age = Integer.parseInt(paramMap.get("age"));
 
         Member member = new Member(username, age);
         memberRepository.save(member);
